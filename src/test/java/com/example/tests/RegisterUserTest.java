@@ -5,10 +5,11 @@ import org.testng.annotations.Test;
 
 import com.example.pages.HomePage;
 import com.example.pages.LoggedUserPage;
+import com.example.pages.MyAccountPage;
 
 public class RegisterUserTest extends BaseTest {
 
-    int randomNr = (int) (Math.random()*1000);
+    int randomNr = (int) (Math.random() * 1000);
     String email = "aloalo" + randomNr + "@alo.pl";
     String password = "aloalo@alo.pl";
 
@@ -19,7 +20,7 @@ public class RegisterUserTest extends BaseTest {
                 .enterMyAccountPage()
                 .registerUser(email, password);
 
-        Assert.assertTrue(new LoggedUserPage(driver).getEntryTitleElement().isDisplayed());
+        Assert.assertTrue(new LoggedUserPage(driver).getEntryLinkElement().isDisplayed());
     }
 
     @Test
@@ -27,9 +28,11 @@ public class RegisterUserTest extends BaseTest {
 
         new HomePage(driver)
                 .enterMyAccountPage()
-                .registerUser(email, password);
+                .registerUser(email, password)
+                .logout().
+                registerUser(email, password);
 
-        Assert.assertTrue(new LoggedUserPage(driver).getAccountRegisteredErrorElement().isDisplayed());
+        Assert.assertTrue(new MyAccountPage(driver).getAccountRegisteredErrorElement().isDisplayed());
     }
 
 }

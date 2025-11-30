@@ -8,10 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 public class LoggedUserPage {
 
     @FindBy(linkText = "Dashboard")
-    private WebElement entryTitleElement;
+    private WebElement entryLinkElement;
 
-    @FindBy(xpath = "//li[text()=' An account is already registered with your email address. Please log in.		']")
-    private WebElement accountRegisteredErrorElement;
+    @FindBy(linkText = "Logout")
+    private WebElement logoutLinkElement;
 
     WebDriver driver;
 
@@ -20,12 +20,13 @@ public class LoggedUserPage {
         this.driver = driver;
     }
 
-    public WebElement getEntryTitleElement() {
-        return entryTitleElement;
+    public WebElement getEntryLinkElement() {
+        return entryLinkElement;
     }
-
-    public WebElement getAccountRegisteredErrorElement() {
-        return accountRegisteredErrorElement;
+    
+    public MyAccountPage logout() {
+        logoutLinkElement.click();
+        return new MyAccountPage(driver);
     }
 
 }

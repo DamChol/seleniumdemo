@@ -19,6 +19,9 @@ public class MyAccountPage {
     @FindBy(name=("register"))
     private WebElement registerButtonElement;
 
+     @FindBy(xpath = "//li[text()=' An account is already registered with your email address. Please log in.		']")
+    private WebElement accountRegisteredErrorElement;
+
     public WebElement getMyAccountTitle() {
         return myAccountTitle;
     }
@@ -30,6 +33,10 @@ public class MyAccountPage {
         this.driver = driver;
     }
 
+    public WebElement getAccountRegisteredErrorElement() {
+        return accountRegisteredErrorElement;
+    }
+
     public LoggedUserPage registerUser(String email, String password) {
         
         emailInpuElement.sendKeys(email);
@@ -37,4 +44,5 @@ public class MyAccountPage {
         registerButtonElement.click();
         return new LoggedUserPage(driver);
     }
+    
 }
