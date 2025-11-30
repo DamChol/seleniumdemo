@@ -5,7 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MyAccountPage {
+import sun.jvm.hotspot.oops.Instance;
+
+public class MyAccountPage extends BasePage {
 
     @FindBy(xpath="//h1[contains(text(),'My account')]/")
     private WebElement myAccountTitle;
@@ -26,23 +28,25 @@ public class MyAccountPage {
         return myAccountTitle;
     }
 
-    WebDriver driver;
-
     public MyAccountPage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver, this);
-        this.driver = driver;
     }
 
     public WebElement getAccountRegisteredErrorElement() {
         return accountRegisteredErrorElement;
     }
 
-    public LoggedUserPage registerUser(String email, String password) {
+    public BasePage registerUser(String email, String password) {
         
         emailInpuElement.sendKeys(email);
         passwordInpuElement.sendKeys(password);
         registerButtonElement.click();
-        return new LoggedUserPage(driver);
+        if ( BasePage.class.isInstance(this)) {
+        return this;
+        } else {
+            return new LoggedUserPage(driver);
+        }
     }
     
 }

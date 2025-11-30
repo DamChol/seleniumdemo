@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoggedUserPage {
+public class LoggedUserPage extends BasePage {
 
     @FindBy(linkText = "Dashboard")
     private WebElement entryLinkElement;
@@ -13,11 +13,9 @@ public class LoggedUserPage {
     @FindBy(linkText = "Logout")
     private WebElement logoutLinkElement;
 
-    WebDriver driver;
-
     public LoggedUserPage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver, this);
-        this.driver = driver;
     }
 
     public WebElement getEntryLinkElement() {

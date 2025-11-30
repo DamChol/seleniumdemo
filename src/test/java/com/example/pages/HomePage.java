@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
+public class HomePage extends BasePage {
 
 
     @FindBy(xpath="//div[@class='container']//span[contains(text(),'My account')]")
@@ -21,10 +21,8 @@ public class HomePage {
 //     private WebElement myAccountLink;
 
 
-WebDriver driver;
-
 public HomePage(WebDriver driver) {
-    this.driver = driver;
+    super(driver);
     PageFactory.initElements(driver, this);
 }
 
