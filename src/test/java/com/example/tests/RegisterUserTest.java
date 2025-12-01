@@ -31,10 +31,11 @@ public class RegisterUserTest extends BaseTest {
                 .enterMyAccountPage()
                 .registerUser(email, password);
 
-                if (result instanceof LoggedUserPage) {}
+                if (result instanceof LoggedUserPage) {
                 new LoggedUserPage(driver)
                 .logout()
                 .registerUser(email, password);
+                }
 
         Assert.assertTrue(new MyAccountPage(driver).getAccountRegisteredErrorElement().getText().contains("An account is already registered with your email address. Please log in."));
     }

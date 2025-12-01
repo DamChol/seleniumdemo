@@ -9,7 +9,7 @@ public class HomePage extends BasePage {
 
 
     @FindBy(xpath="//div[@class='container']//span[contains(text(),'My account')]")
-    private WebElement myAccountElememnt;
+    private WebElement myAccountElement;
     
     @FindBy(xpath="//div[contains(text(),'Design your')]")
     private WebElement homePageTitleElement;
@@ -27,9 +27,13 @@ public WebElement getHomePageTitle() {
     return homePageTitleElement;
 }
 
+public WebElement getMyAccountElement() {
+    return myAccountElement;
+}
+
 
 public MyAccountPage enterMyAccountPage() {
-    myAccountElememnt.click();
+    myAccountElement.click();
     return new MyAccountPage(driver);
 } 
 
