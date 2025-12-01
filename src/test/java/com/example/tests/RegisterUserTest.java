@@ -36,7 +36,7 @@ public class RegisterUserTest extends BaseTest {
                 .logout()
                 .registerUser(email, password);
 
-        Assert.assertTrue(new MyAccountPage(driver).getAccountRegisteredErrorElement().isDisplayed());
+        Assert.assertTrue(new MyAccountPage(driver).getAccountRegisteredErrorElement().getText().contains("An account is already registered with your email address. Please log in."));
     }
 
 }

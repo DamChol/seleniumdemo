@@ -9,17 +9,14 @@ public class HomePage extends BasePage {
 
 
     @FindBy(xpath="//div[@class='container']//span[contains(text(),'My account')]")
-    private WebElement myAccountLink;
+    private WebElement myAccountElememnt;
     
     @FindBy(xpath="//div[contains(text(),'Design your')]")
-    private WebElement homePageTitle;
-    
-//     @FindBy(linkText="http://seleniumdemo.com/?page_id=7")
-//     private WebElement myAccountLink;
-    
-//     @FindBy(linkText="http://seleniumdemo.com/?page_id=7")
-//     private WebElement myAccountLink;
+    private WebElement homePageTitleElement;
 
+    @FindBy(xpath="//nav[@id='topbar-nav']//span[text()='Shop']")
+    private WebElement shopLinkElement;
+    
 
 public HomePage(WebDriver driver) {
     super(driver);
@@ -27,14 +24,19 @@ public HomePage(WebDriver driver) {
 }
 
 public WebElement getHomePageTitle() {
-    return homePageTitle;
+    return homePageTitleElement;
 }
 
 
 public MyAccountPage enterMyAccountPage() {
-    myAccountLink.click();
+    myAccountElememnt.click();
     return new MyAccountPage(driver);
 } 
+
+public ShopPage getIntoShop() {
+    shopLinkElement.click();
+    return new ShopPage(driver);
+}
 
 }
 
