@@ -1,90 +1,9 @@
-<html>
-<head>
-<title>TestNG:  Surefire test</title>
-<link href="../testng.css" rel="stylesheet" type="text/css" />
-<link href="../my-testng.css" rel="stylesheet" type="text/css" />
-
-<style type="text/css">
-.log { display: none;} 
-.stack-trace { display: none;} 
-</style>
-<script type="text/javascript">
-<!--
-function flip(e) {
-  current = e.style.display;
-  if (current == 'block') {
-    e.style.display = 'none';
-    return 0;
-  }
-  else {
-    e.style.display = 'block';
-    return 1;
-  }
-}
-
-function toggleBox(szDivId, elem, msg1, msg2)
-{
-  var res = -1;  if (document.getElementById) {
-    res = flip(document.getElementById(szDivId));
-  }
-  else if (document.all) {
-    // this is the way old msie versions work
-    res = flip(document.all[szDivId]);
-  }
-  if(elem) {
-    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
-  }
-
-}
-
-function toggleAllBoxes() {
-  if (document.getElementsByTagName) {
-    d = document.getElementsByTagName('div');
-    for (i = 0; i < d.length; i++) {
-      if (d[i].className == 'log') {
-        flip(d[i]);
-      }
-    }
-  }
-}
-
-// -->
-</script>
-
-</head>
-<body>
-<h2 align='center'>Surefire test</h2><table border='1' align="center">
-<tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/5/0</td>
-</tr><tr>
-<td>Started on:</td><td>Mon Dec 01 17:37:32 CET 2025</td>
-</tr>
-<tr><td>Total time:</td><td>3 seconds (3037 ms)</td>
-</tr><tr>
-<td>Included groups:</td><td></td>
-</tr><tr>
-<td>Excluded groups:</td><td></td>
-</tr>
-</table><p/>
-<small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.example.tests.LoginTest.enterMyAccountPageTest()'><b>enterMyAccountPageTest</b><br>Test class: com.example.tests.LoginTest</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
-	at com.example.pages.HomePage.enterMyAccountPage(HomePage.java:36)
-	at com.example.tests.LoginTest.enterMyAccountPageTest(LoginTest.java:21)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1318475957", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1318475957'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 3.430 s <<< FAILURE! -- in TestSuite
+com.example.tests.LoginTest.enterMyAccountPageTest -- Time elapsed: 0.033 s <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
@@ -121,20 +40,9 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-</pre></div></td>
-<td>0</td>
-<td>com.example.tests.LoginTest@5e25a92e</td></tr>
-<tr>
-<td title='com.example.tests.LoginTest.loginUserTest()'><b>loginUserTest</b><br>Test class: com.example.tests.LoginTest<br>Parameters: aloalo3@alo.pl, aloalo@alo.pl</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
-	at com.example.pages.HomePage.enterMyAccountPage(HomePage.java:36)
-	at com.example.tests.LoginTest.loginUserTest(LoginTest.java:29)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1302141801", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1302141801'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+
+com.example.tests.LoginTest.loginUserTest[aloalo3@alo.pl, aloalo@alo.pl](1) -- Time elapsed: 0.005 s <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
@@ -171,20 +79,9 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-</pre></div></td>
-<td>0</td>
-<td>com.example.tests.LoginTest@5e25a92e</td></tr>
-<tr>
-<td title='com.example.tests.LoginTest.loginUserTest()'><b>loginUserTest</b><br>Test class: com.example.tests.LoginTest<br>Parameters: locked_out_email, password</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
-	at com.example.pages.HomePage.enterMyAccountPage(HomePage.java:36)
-	at com.example.tests.LoginTest.loginUserTest(LoginTest.java:29)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace622820646", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace622820646'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+
+com.example.tests.LoginTest.loginUserTest[locked_out_email, password](2) -- Time elapsed: 0.001 s <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
@@ -221,20 +118,9 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-</pre></div></td>
-<td>0</td>
-<td>com.example.tests.LoginTest@5e25a92e</td></tr>
-<tr>
-<td title='com.example.tests.RegisterUserTest.registerUserNegativeTest()'><b>registerUserNegativeTest</b><br>Test class: com.example.tests.RegisterUserTest</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
-	at com.example.pages.HomePage.enterMyAccountPage(HomePage.java:36)
-	at com.example.tests.RegisterUserTest.registerUserNegativeTest(RegisterUserTest.java:31)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1346197173", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1346197173'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+
+com.example.tests.RegisterUserTest.registerUserNegativeTest -- Time elapsed: 0.001 s <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
@@ -271,20 +157,9 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-</pre></div></td>
-<td>0</td>
-<td>com.example.tests.RegisterUserTest@4df828d7</td></tr>
-<tr>
-<td title='com.example.tests.RegisterUserTest.registerUserTest()'><b>registerUserTest</b><br>Test class: com.example.tests.RegisterUserTest</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
-	at com.example.pages.HomePage.enterMyAccountPage(HomePage.java:36)
-	at com.example.tests.RegisterUserTest.registerUserTest(RegisterUserTest.java:21)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1128266449", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1128266449'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+
+com.example.tests.RegisterUserTest.registerUserTest -- Time elapsed: 0.001 s <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
@@ -321,22 +196,4 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-</pre></div></td>
-<td>0</td>
-<td>com.example.tests.RegisterUserTest@4df828d7</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.example.tests.CheckoutTest.checkoutTest()'><b>checkoutTest</b><br>Test class: com.example.tests.CheckoutTest</td>
-<td></td>
-<td>0</td>
-<td>com.example.tests.CheckoutTest@76329302</td></tr>
-</table><p>
-</body>
-</html>
+

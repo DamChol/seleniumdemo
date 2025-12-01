@@ -32,8 +32,6 @@ public void loginUserTest(String email, String password) {
     if(result instanceof LoggedUserPage) {
         Assert.assertTrue(new LoggedUserPage(driver).getEntryLinkElement().getText().contains("My account") );
     }
-
-
 }
 
 @DataProvider(name="loginData")

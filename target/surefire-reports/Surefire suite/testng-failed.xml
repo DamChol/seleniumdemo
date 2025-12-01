@@ -3,13 +3,22 @@
 <suite name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="com.example.tests.loginTest">
+      <class name="com.example.tests.LoginTest">
         <methods>
+          <include name="enterMyAccountPageTest"/>
+          <include name="loginUserTest" invocation-numbers="0 1"/>
           <include name="setup"/>
-          <include name="loginUserTest"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.example.tests.loginTest -->
+      </class> <!-- com.example.tests.LoginTest -->
+      <class name="com.example.tests.RegisterUserTest">
+        <methods>
+          <include name="registerUserNegativeTest"/>
+          <include name="setup"/>
+          <include name="registerUserTest"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.example.tests.RegisterUserTest -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->

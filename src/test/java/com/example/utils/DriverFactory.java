@@ -10,8 +10,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
 
-    
+    private static WebDriver driver;
+
     public static WebDriver getDriver() throws IOException {
+        if (driver == null) {
         String browser = PropertiesReader.readProperties("browser");
         switch (browser.toLowerCase()) {
         case "chrome": 
@@ -24,6 +26,8 @@ public class DriverFactory {
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
     }
-
+}
+    return driver;
+    
     }
 }
